@@ -1,0 +1,20 @@
+java70 -jar ~/utils/GenomeAnalysisTK.jar \
+   -T DepthOfCoverage \
+   -R /media/partition/references/hg19_broadinstitute/ucsc.hg19.fa \
+   -o 15001181_S1_output \
+   -I /media/partition/test/15001181_S1_velona.bam \
+   -L /media/partition/TST_15-A-manifest.bed
+
+
+java70 -jar ~/utils/GenomeAnalysisTK.jar \
+  -T FlagStat \
+  -R /media/partition/references/hg19_broadinstitute/ucsc.hg19.fa \
+  -I /media/partition/test/15001181_S1_velona.bam
+
+
+java70 -jar ~/utils/GenomeAnalysisTK.jar \
+  -T DiagnoseTargets \
+  -R /media/partition/references/hg19_broadinstitute/ucsc.hg19.fa \
+  -I /media/partition/test/15001181_S1_velona.bam \
+  -L /media/partition/TST_15-A-manifest.bed \
+  -o output_.vcf

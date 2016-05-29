@@ -1,0 +1,82 @@
+###### Varscan ######
+
+samtools mpileup \
+-f /PATH/TO/REFERENCE/ucsc.hg19.fasta \
+-l /PATH/TO/BEDFILE/Regions.bed \
+/PATH/TO/BAMFILE/assembly.bam \
+-d 1000000 \ #samtools default depth is 8000
+| java -jar /PATH/TO/VARSCAN/VarScan.v2.3.9.jar mpileup2snp \
+--min-coverage 100 #Minimum read depth at a position to make a call [8]
+--min-reads2 4 #Minimum supporting reads at a position to call variants [2]
+--min-avg-qual 20 #Minimum base quality at a position to count a read [15]
+--min-var-freq 0.05 #Minimum variant allele frequency threshold [0.01]
+--min-freq-for-hom 0.75 #Minimum frequency to call homozygote [0.75]
+# --p-value Default p-value threshold for calling variants [99e-02]
+--strand-filter 1 #Ignore variants with >90% support on one strand [1]
+--output-vcf 1 #If set to 1, outputs in VCF format
+#--variants Report only variant (SNP/indel) positions (mpileup2cns only) [0]
+> /PATH/TO/OUTPUTFILE/output_varscan.vcf
+
+###### SAMtools ######
+
+samtools mpileup \
+-uf /media/partition/hg19/ucsc.hg19.fasta \
+-l ~/Desktop/00100-1407755742_Regions.bed \
+-d 1000000 \
+~/stage_lns/Scripts_Thesis/assembly.bam \
+| bcftools call \
+-c \
+-v -  > output_samtools.vcf
+
+
+
+##### GATK UnifiedGenotyper ######
+
+java -jar ~/utils/GenomeAnalysisTK.jar \
+-T UnifiedGenotyper \
+-R /media/partition/hg19/ucsc.hg19.fasta \
+-L ~/Desktop/00100-1407755742_Regions.bed \
+-I ~/stage_lns/Scripts_Thesis/assembly.bam \
+-o ~/Desktop/output_GATK_UG.vcf \
+-stand_emit_conf 10 \
+-stand_call_conf 10 \
+-A FisherStrand \
+-A AlleleBalance \
+-A BaseCounts \
+-A GCContent \
+-A StrandOddsRatio \
+-A StrandBiasBySample \
+-A Coverage \
+
+
+
+###### MuTect ######
+
+java -jar ~/utils/mutect-1.1.7.jar -T MuTect \
+--input_file:tumor /media/usb/Thesis/Haloplex_2_Mid_February/SURECALL/15010800_S3_L001_R1_001.fastq_04Mar2016_11_53_24_15_Sorted.bam \
+-S STRICT \
+-R /media/partition/hg19_surecall/hg19/hg19.fasta \
+-L /media/partition/Haloplex/00100-1407755742_Regions.bed \
+-o output_mutect_STRICT.txt \
+-vcf output_mutect_STRICT.vcf
+
+
+
+###### SNPSVM ######
+
+java -jar ~/utils/SNPSVM/snpsvm.jar \
+predict \
+-R /media/partition/hg19/ucsc.hg19.fasta \
+-B ~/stage_lns/Scripts_Thesis/assembly.bam \
+-L ~/Desktop/00100-1407755742_Regions_modified.bed \
+-M ~/utils/SNPSVM/models/default.model \
+-V ~/Desktop/output_SNPSVM.vcf
+
+
+
+###### STRELKA ######
+/home/ben/utils/strelka_installation/bin/configureStrelkaWorkflow.pl \
+--tumor=assembly.bam \
+--ref=/media/partition/hg19/ucsc.hg19.fasta \
+--config=config.ini \
+--output-dir=./myAnalysis

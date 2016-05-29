@@ -1,0 +1,35 @@
+java -jar ~/utils/GenomeAnalysisTK.jar \
+-T CallableLoci \
+-R /media/partition/hg19_surecall/hg19/hg19.fasta \
+-I /media/usb/Haloplex_2_Mid_February/FASTQ_raw/15010800_S3_L001_R1_001.fastq_04Mar2016_11_53_24_15_Sorted.bam \
+--minDepth 500 \
+-summary table.txt \
+-o callable_status.bed
+
+grep CALLABLE callable_status.bed >> callable1.bed
+
+java -jar ~/utils/GenomeAnalysisTK.jar \
+-T CountIntervals \
+-R /media/partition/hg19_surecall/hg19/hg19.fasta \
+-o output.txt \
+-check ~/callable.bed
+
+java -jar /Users/benflies/Documents/bioinformatics/GenomeAnalysisTK.jar \
+-T DiagnoseTargets \
+-R ~/Downloads/ucsc.hg19.fasta \
+-I /Volumes/KING_BEN/hpx_csc_velona/15001181_S1_velona.bam \
+-L /Users/benflies/Documents/Uni/Master_Thesis/scripts/00100-1407755742_Regions.bed \
+-o output.vcf
+
+java -jar ~/utils/GenomeAnalysisTK.jar \
+-T FindCoveredIntervals \
+-R /media/partition/hg19_surecall/hg19/hg19.fasta \
+-I /media/partition/TST15/TST15_Test_1_Early_February/Base_Space/15001181_S2.bam \
+-L /media/partition/TST15/TST_15-A-manifest.bed \
+--uncovered \
+-o output.list
+
+java -jar /Users/benflies/Documents/bioinformatics/picard-tools-2.2.4/picard.jar CollectAlignmentSummaryMetrics \
+	R=~/Downloads/ucsc.hg19.fasta \
+	I=/Volumes/KING_BEN/hpx_csc_velona/15001181_S1_velona.bam \
+	O=output.txt

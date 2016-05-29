@@ -1,0 +1,96 @@
+###### Variant Calling Tools Guide ######
+
+# For Christophe
+
+# Includes:
+# - example of usage
+# - description of options
+
+
+
+###### Varscan ######
+
+### Usage
+samtools mpileup \
+-f /media/partition/hg19/ucsc.hg19.fasta \
+-l /media/partition/Haloplex/00100-1407755742_Regions.bed \
+/media/usb/Thesis/Haloplex_2_Mid_February/SURECALL/15010800_S3_L001_R1_001.fastq_04Mar2016_11_53_24_15_Sorted.bam \
+-d 1000000 \
+| java -jar ~/utils/VarScan.v2.3.9.jar mpileup2snp \
+--min-coverage 100 \
+--min-reads2 4 \
+--min-avg-qual 20 \
+--min-var-freq 0.03 \
+--strand-filter 1 \
+--output-vcf 1 > ~/output_varscan_15010800_S3.vcf
+
+### Options:
+--min-coverage 	Minimum read depth at a position to make a call [8]
+--min-reads2	Minimum supporting reads at a position to call variants [2]
+--min-avg-qual	Minimum base quality at a position to count a read [15]
+--min-var-freq	Minimum variant allele frequency threshold [0.01]
+--min-freq-for-hom	Minimum frequency to call homozygote [0.75]
+--p-value	Default p-value threshold for calling variants [99e-02]
+--strand-filter	Ignore variants with >90% support on one strand [1]
+--output-vcf	If set to 1, outputs in VCF format
+--variants 	Report only variant (SNP/indel) positions (mpileup2cns only) [0]
+
+
+
+###### SAMtools & BCFtools ######
+
+### Usage
+samtools mpileup \
+-uf /media/partition/hg19/ucsc.hg19.fasta \
+-l ~/Desktop/00100-1407755742_Regions.bed \
+-d 1000000 \
+~/work_directory/assembly.bam \
+| bcftools call \
+-c \
+-v -  > output_samtools.vcf
+
+### Options:
+http://www.htslib.org/doc/bcftools-1.0.html#call
+
+
+
+##### GATK UnifiedGenotyper ######
+
+java -jar ~/utils/GenomeAnalysisTK.jar \
+-T UnifiedGenotyper \
+-R /media/partition/hg19/ucsc.hg19.fasta \
+-L ~/Desktop/00100-1407755742_Regions.bed \
+-I ~/work_directory/assembly.bam \
+-o output_GATK_UG.vcf \
+-stand_emit_conf 10 \
+-stand_call_conf 10 \
+-A FisherStrand \
+-A AlleleBalance \
+-A BaseCounts \
+-A GCContent \
+-A StrandOddsRatio \
+-A StrandBiasBySample \
+-A Coverage
+
+
+
+###### MuTect ######
+
+java -jar ~/utils/mutect-1.1.7.jar -T MuTect \
+--input_file:tumor ~/work_directory/assembly.bam \
+-S LENIENT \
+-R /media/partition/hg19/ucsc.hg19.fasta \
+-L ~/Desktop/00100-1407755742_Regions.bed \
+-o output_mutect.txt \
+-vcf output_mutect.vcf
+
+
+
+###### Freebayes ######
+freebayes \
+-f /media/partition/hg19/ucsc.hg19.fasta \
+-t ~/Desktop/00100-1407755742_Regions_modified.bed \
+--standard-filters \
+--min-coverage 250  \
+~/work_directory/assembly.bam \
+> output_freebayes.vcf
