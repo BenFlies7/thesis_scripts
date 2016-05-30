@@ -1,0 +1,9 @@
+# TODO
+
+Quality: TST15 vs Haloplex
+Quality: FFPE vs Blood/BM
+
+Amplicon distributions: TST15 vs Haloplex
+
+On target distribution: TST15 vs Haloplex
+On target mean: FFPE vs Blood/BM

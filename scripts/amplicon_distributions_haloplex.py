@@ -1,6 +1,12 @@
 #!usr/bin/env python
 # -*- coding: utf-8 -*-
 
+'''
+This script plots the normalized coverage distribution per amplicon in a
+given directory. The average coverage per target region is normalized by
+dividing this value by the overall average coverage of each target sequences.
+'''
+
 #Load modules
 import pybedtools
 import re
@@ -10,18 +16,18 @@ from collections import namedtuple, defaultdict, OrderedDict
 import numpy as np
 import matplotlib.pyplot as plt
 from operator import itemgetter
+import seaborn as sns
+import pandas as pd
 
-#INTERVALS_BED = '/media/partition/tst15/TST_15-A-manifest.bed'
-#INTERVALS_BED = '/media/partition/tst15/TST_15-B-manifest.bed'
-INTERVALS_BED = '00100-1407755742_Regions.bed'
+#INTERVALS_BED = '/media/partition/TST_15-A-manifest.bed'
+#INTERVALS_BED = '/media/partition/TST_15-B-manifest.bed'
+INTERVALS_BED = '/media/partition/00100-1407755742_Regions.bed'
 
 COVERAGE_THRESHOLD = 1000
 
-#directory = '/media/partition/Haloplex/Haloplex_Test_2_Mid_February/Velona'
-
 #directory = '/media/partition/tst15/MixA'
 #directory = '/media/partition/tst15/MixB'
-directory = '/Volumes/KING_BEN/Velona/'
+directory = '/media/partition/collected/hpx_csc_surecall'
 
 fig,ax1 = plt.subplots()
 plt.hold = True
@@ -83,7 +89,7 @@ for file in bam_file_list:
             }
         else:
             collected[interval[3].encode('ascii','ignore')]['Coverages'].append(float(interval[4]) / cov_mean)
-        #collected[interval[3].encode('ascii','ignore')]['Coverages'].append(float(interval[4]))
+
         if float(interval[4]) <= 1 :
             print('Amplicon %s was not amplified at all !' %(interval[3]))
         elif 1 < float(interval[4]) <= COVERAGE_THRESHOLD:
@@ -98,9 +104,17 @@ for key, value in collected.items():
 for key, value in collected_sorted.items():
     boxes.append(collected_sorted[key]['Coverages'])
 
-plt.boxplot(boxes,sym='')
-xtickNames = plt.setp(ax1, xticklabels = [])
-plt.setp(xtickNames, rotation=90, fontsize=14)
+bp = plt.boxplot(boxes,patch_artist=True,sym='')
+
+for box in bp['boxes']:
+    box.set(linewidth=0.1)
+
+for whisker in bp['whiskers']:
+    whisker.set(linewidth=1)
+
+xtickNames = plt.setp(ax1, xticklabels = collected_sorted.keys())
+
+plt.setp(xtickNames, rotation=90, fontsize=7)
 plt.ylabel('Coverage (x)')
 plt.xlabel('Target ID')
 #plt.title('Comparison of Amplicon Depths Across Samples')
