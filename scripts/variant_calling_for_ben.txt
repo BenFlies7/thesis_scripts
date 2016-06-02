@@ -76,21 +76,33 @@ java -jar ~/utils/GenomeAnalysisTK.jar \
 
 ###### MuTect ######
 
-java -jar ~/utils/mutect-1.1.7.jar -T MuTect \
---input_file:tumor ~/work_directory/assembly.bam \
+java70 -jar ~/utils/mutect-1.1.7.jar -T MuTect \
+--input_file:tumor /media/partition/collected/tst15_velona/mixA/15010800_S6_velona.bam \
 -S LENIENT \
--R /media/partition/hg19/ucsc.hg19.fasta \
--L ~/Desktop/00100-1407755742_Regions.bed \
--o output_mutect.txt \
--vcf output_mutect.vcf
+-R /media/partition/references/hg19_broadinstitute/ucsc.hg19.fa \
+-L /media/partition/TST_15-B-manifest.bed \
+-o 15010800_S6_mutect.txt \
+-dbsnp /media/partition/references/hg19_broadinstitute/dbsnp_138.hg19.vcf.gz \
+-vcf 15010800_S6_mutect.vcf
 
 
 
 ###### Freebayes ######
 freebayes \
--f /media/partition/hg19/ucsc.hg19.fasta \
+-f /media/partition/references/hg19_broadinstitute/ucsc.hg19.fa \
 -t ~/Desktop/00100-1407755742_Regions_modified.bed \
 --standard-filters \
 --min-coverage 250  \
 ~/work_directory/assembly.bam \
 > output_freebayes.vcf
+
+
+lofreq call \
+-f /media/partition/references/hg19_broadinstitute/ucsc.hg19.fa \
+-o 15010800_S6_lofreq.vcf \
+/media/partition/collected/tst15_velona/mixA/15010800_S6_velona.bam \
+-S /media/partition/references/hg19_broadinstitute/dbsnp_138.hg19.vcf.gz \
+-s \
+-a 0.03 \
+-C 500 \
+-l /media/partition/TST_15-A-manifest.bed
