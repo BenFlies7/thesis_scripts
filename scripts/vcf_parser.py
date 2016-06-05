@@ -9,7 +9,9 @@ from collections import namedtuple
 from matplotlib_venn import venn3
 import matplotlib.pyplot as plt
 
-directory = '/media/partition/variants'
+#directory = '/media/partition/variants'
+directory = '/Volumes/KING_BEN/variants'
+
 
 vcf_file_list = [f for f in glob.iglob(directory+"/*.vcf")]
 
@@ -73,5 +75,5 @@ set_GATKHC = set(set_GATKHC)
 set_mutect = set(set_mutect)
 set_lofreq = set(set_lofreq)
 
-venn3([set_lofreq, set_mutect, set_GATKHC], ('lofreq', 'MuTect', 'GATKHC'))
+venn3([set_varscan, set_mutect, set_GATKHC], ('VarScan2', 'MuTect1.1.7', 'GATK_HaplotypeCaller'))
 plt.show()
