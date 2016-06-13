@@ -1,0 +1,411 @@
+freebayes \
+-f /media/partition/references/hg19_surecall/hg19.fasta \
+-t /media/partition/00100-1407755742_Regions.bed \
+--standard-filters \
+--min-coverage 500 \
+-F 0.026 \
+> /media/partition/freebayes/15001181_S1_hpx_freebayes.vcf \
+/media/partition/collected/hpx_csc_velona/15001181_S1_velona.bam
+
+freebayes \
+-f /media/partition/references/hg19_surecall/hg19.fasta \
+-t /media/partition/00100-1407755742_Regions.bed \
+--standard-filters \
+--min-coverage 500 \
+-F 0.026 \
+--vcf /media/partition/freebayes/15010800_S3_hpx_freebayes.vcf \
+/media/partition/collected/hpx_csc_velona/15010800_S3_velona.bam
+
+freebayes \
+-f /media/partition/references/hg19_surecall/hg19.fasta \
+-t /media/partition/00100-1407755742_Regions.bed \
+--standard-filters \
+--min-coverage 500 \
+-F 0.026 \
+--vcf /media/partition/freebayes/15016513_S5_hpx_freebayes.vcf \
+/media/partition/collected/hpx_csc_velona/15016513_S5_velona.bam
+
+freebayes \
+-f /media/partition/references/hg19_surecall/hg19.fasta \
+-t /media/partition/00100-1407755742_Regions.bed \
+--standard-filters \
+--min-coverage 500 \
+-F 0.026 \
+--vcf /media/partition/freebayes/15018040_S4_hpx_freebayes.vcf \
+/media/partition/collected/hpx_csc_velona/15018040_S4_velona.bam
+
+freebayes \
+-f /media/partition/references/hg19_surecall/hg19.fasta \
+-t /media/partition/00100-1407755742_Regions.bed \
+--standard-filters \
+--min-coverage 500 \
+-F 0.026 \
+--vcf /media/partition/freebayes/15020056_S2_hpx_freebayes.vcf \
+/media/partition/collected/hpx_csc_velona/15020056_S2_velona.bam
+
+freebayes \
+-f /media/partition/references/hg19_surecall/hg19.fasta \
+-t /media/partition/00100-1407755742_Regions.bed \
+--standard-filters \
+--min-coverage 500 \
+-F 0.026 \
+--vcf /media/partition/freebayes/15027722_S4_hpx_freebayes.vcf \
+/media/partition/collected/hpx_csc_velona/15027722_S4_velona.bam
+
+freebayes \
+-f /media/partition/references/hg19_surecall/hg19.fasta \
+-t /media/partition/00100-1407755742_Regions.bed \
+--standard-filters \
+--min-coverage 500 \
+-F 0.026 \
+--vcf /media/partition/freebayes/15028422_S6_hpx_freebayes.vcf \
+/media/partition/collected/hpx_csc_velona/15028422_S6_velona.bam
+
+freebayes \
+-f /media/partition/references/hg19_surecall/hg19.fasta \
+-t /media/partition/00100-1407755742_Regions.bed \
+--standard-filters \
+--min-coverage 500 \
+-F 0.026 \
+--vcf /media/partition/freebayes/15038519_S3_hpx_freebayes.vcf \
+/media/partition/collected/hpx_csc_velona/15038519_S3_velona.bam
+
+freebayes \
+-f /media/partition/references/hg19_surecall/hg19.fasta \
+-t /media/partition/00100-1407755742_Regions.bed \
+--standard-filters \
+--min-coverage 500 \
+-F 0.026 \
+--vcf /media/partition/freebayes/15039121_S7_hpx_freebayes.vcf \
+/media/partition/collected/hpx_csc_velona/15039121_S7_velona.bam
+
+freebayes \
+-f /media/partition/references/hg19_surecall/hg19.fasta \
+-t /media/partition/00100-1407755742_Regions.bed \
+--standard-filters \
+--min-coverage 500 \
+-F 0.026 \
+--vcf /media/partition/freebayes/15039718_S8_hpx_freebayes.vcf \
+/media/partition/collected/hpx_csc_velona/15039718_S8_velona.bam
+
+freebayes \
+-f /media/partition/references/hg19_surecall/hg19.fasta \
+-t /media/partition/00100-1407755742_Regions.bed \
+--standard-filters \
+--min-coverage 500 \
+-F 0.026 \
+--vcf /media/partition/freebayes/15051669_S1_hpx_freebayes.vcf \
+/media/partition/collected/hpx_csc_velona/15051669_S1_velona.bam
+
+freebayes \
+-f /media/partition/references/hg19_surecall/hg19.fasta \
+-t /media/partition/00100-1407755742_Regions.bed \
+--standard-filters \
+--min-coverage 500 \
+-F 0.026 \
+--vcf /media/partition/freebayes/15056672_S1_hpx_freebayes.vcf \
+/media/partition/collected/hpx_csc_velona/15056672_S1_velona.bam
+
+freebayes \
+-f /media/partition/references/hg19_surecall/hg19.fasta \
+-t /media/partition/00100-1407755742_Regions.bed \
+--standard-filters \
+--min-coverage 500 \
+-F 0.026 \
+--vcf /media/partition/freebayes/15060478_S2_hpx_freebayes.vcf \
+/media/partition/collected/hpx_csc_velona/15060478_S2_velona.bam
+
+freebayes \
+-f /media/partition/references/hg19_surecall/hg19.fasta \
+-t /media/partition/00100-1407755742_Regions.bed \
+--standard-filters \
+--min-coverage 500 \
+-F 0.026 \
+--vcf /media/partition/freebayes/15061857_S2_hpx_freebayes.vcf \
+/media/partition/collected/hpx_csc_velona/15061857_S2_velona.bam
+
+freebayes \
+-f /media/partition/references/hg19_surecall/hg19.fasta \
+-t /media/partition/00100-1407755742_Regions.bed \
+--standard-filters \
+--min-coverage 500 \
+-F 0.026 \
+--vcf /media/partition/freebayes/16014994_S13_hpx_freebayes.vcf \
+/media/partition/collected/hpx_csc_velona/16014994_S13_velona.bam
+
+freebayes \
+-f /media/partition/references/hg19_surecall/hg19.fasta \
+-t /media/partition/00100-1407755742_Regions.bed \
+--standard-filters \
+--min-coverage 500 \
+-F 0.026 \
+--vcf /media/partition/freebayes/16015957_S7_hpx_freebayes.vcf \
+/media/partition/collected/hpx_csc_velona/16015957_S7_velona.bam
+
+freebayes \
+-f /media/partition/references/hg19_surecall/hg19.fasta \
+-t /media/partition/00100-1407755742_Regions.bed \
+--standard-filters \
+--min-coverage 500 \
+-F 0.026 \
+--vcf /media/partition/freebayes/16017280_S9_hpx_freebayes.vcf \
+/media/partition/collected/hpx_csc_velona/16017280_S9_velona.bam
+
+freebayes \
+-f /media/partition/references/hg19_surecall/hg19.fasta \
+-t /media/partition/00100-1407755742_Regions.bed \
+--standard-filters \
+--min-coverage 500 \
+-F 0.026 \
+--vcf /media/partition/freebayes/16017282_S10_hpx_freebayes.vcf \
+/media/partition/collected/hpx_csc_velona/16017282_S10_velona.bam
+
+freebayes \
+-f /media/partition/references/hg19_surecall/hg19.fasta \
+-t /media/partition/00100-1407755742_Regions.bed \
+--standard-filters \
+--min-coverage 500 \
+-F 0.026 \
+--vcf /media/partition/freebayes/16017771_S11_hpx_freebayes.vcf \
+/media/partition/collected/hpx_csc_velona/16017771_S11_velona.bam
+
+freebayes \
+-f /media/partition/references/hg19_surecall/hg19.fasta \
+-t /media/partition/00100-1407755742_Regions.bed \
+--standard-filters \
+--min-coverage 500 \
+-F 0.026 \
+--vcf /media/partition/freebayes/16017772_S12_hpx_freebayes.vcf \
+/media/partition/collected/hpx_csc_velona/16017772_S12_velona.bam
+
+
+#########################################################################
+
+
+freebayes \
+-f /media/partition/references/hg19_broadinstitute/ucsc.hg19.fasta \
+-t /media/partition/TST_15-A-manifest.bed \
+--standard-filters \
+--min-coverage 500 \
+-F 0.026 \
+--vcf /media/partition/freebayes/15001181_S1_tst_freebayes.vcf \
+/media/partition/collected/tst15_velona/mixA/15001181_S1_velona.bam
+
+freebayes \
+-f /media/partition/references/hg19_broadinstitute/ucsc.hg19.fasta \
+-t /media/partition/TST_15-A-manifest.bed \
+--standard-filters \
+--min-coverage 500 \
+-F 0.026 \
+--vcf /media/partition/freebayes/15010800_S1_tst_freebayes.vcf \
+/media/partition/collected/tst15_velona/mixA/15010800_S1_velona.bam
+
+freebayes \
+-f /media/partition/references/hg19_broadinstitute/ucsc.hg19.fasta \
+-t /media/partition/TST_15-A-manifest.bed \
+--standard-filters \
+--min-coverage 500 \
+-F 0.026 \
+--vcf /media/partition/freebayes/15016513_S5_tst_freebayes.vcf \
+/media/partition/collected/tst15_velona/mixA/15016513_S5_velona.bam
+
+freebayes \
+-f /media/partition/references/hg19_broadinstitute/ucsc.hg19.fasta \
+-t /media/partition/TST_15-A-manifest.bed \
+--standard-filters \
+--min-coverage 500 \
+-F 0.026 \
+--vcf /media/partition/freebayes/15018040_S4_tst_freebayes.vcf \
+/media/partition/collected/tst15_velona/mixA/15018040_S4_velona.bam
+
+freebayes \
+-f /media/partition/references/hg19_broadinstitute/ucsc.hg19.fasta \
+-t /media/partition/TST_15-A-manifest.bed \
+--standard-filters \
+--min-coverage 500 \
+-F 0.026 \
+--vcf /media/partition/freebayes/15020056_S2_tst_freebayes.vcf \
+/media/partition/collected/tst15_velona/mixA/15020056_S2_velona.bam
+
+freebayes \
+-f /media/partition/references/hg19_broadinstitute/ucsc.hg19.fasta \
+-t /media/partition/TST_15-A-manifest.bed \
+--standard-filters \
+--min-coverage 500 \
+-F 0.026 \
+--vcf /media/partition/freebayes/15027722_S2_tst_freebayes.vcf \
+/media/partition/collected/tst15_velona/mixA/15027722_S2_velona.bam
+
+freebayes \
+-f /media/partition/references/hg19_broadinstitute/ucsc.hg19.fasta \
+-t /media/partition/TST_15-A-manifest.bed \
+--standard-filters \
+--min-coverage 500 \
+-F 0.026 \
+--vcf /media/partition/freebayes/15028422_S6_tst_freebayes.vcf \
+/media/partition/collected/tst15_velona/mixA/15028422_S6_velona.bam
+
+freebayes \
+-f /media/partition/references/hg19_broadinstitute/ucsc.hg19.fasta \
+-t /media/partition/TST_15-A-manifest.bed \
+--standard-filters \
+--min-coverage 500 \
+-F 0.026 \
+--vcf /media/partition/freebayes/15038519_S3_tst_freebayes.vcf \
+/media/partition/collected/tst15_velona/mixA/15038519_S3_velona.bam
+
+freebayes \
+-f /media/partition/references/hg19_broadinstitute/ucsc.hg19.fasta \
+-t /media/partition/TST_15-A-manifest.bed \
+--standard-filters \
+--min-coverage 500 \
+-F 0.026 \
+--vcf /media/partition/freebayes/15039121_S7_tst_freebayes.vcf \
+/media/partition/collected/tst15_velona/mixA/15039121_S7_velona.bam
+
+freebayes \
+-f /media/partition/references/hg19_broadinstitute/ucsc.hg19.fasta \
+-t /media/partition/TST_15-A-manifest.bed \
+--standard-filters \
+--min-coverage 500 \
+-F 0.026 \
+--vcf /media/partition/freebayes/15039718_S8_tst_freebayes.vcf \
+/media/partition/collected/tst15_velona/mixA/15039718_S8_velona.bam
+
+freebayes \
+-f /media/partition/references/hg19_broadinstitute/ucsc.hg19.fasta \
+-t /media/partition/TST_15-A-manifest.bed \
+--standard-filters \
+--min-coverage 500 \
+-F 0.026 \
+--vcf /media/partition/freebayes/15051669_S1_tst_freebayes.vcf \
+/media/partition/collected/tst15_velona/mixA/15051669_S1_velona.bam
+
+
+freebayes \
+-f /media/partition/references/hg19_broadinstitute/ucsc.hg19.fasta \
+-t /media/partition/TST_15-A-manifest.bed \
+--standard-filters \
+--min-coverage 500 \
+-F 0.026 \
+--vcf /media/partition/freebayes/15056672_S2_tst_freebayes.vcf \
+/media/partition/collected/tst15_velona/mixA/15056672_S2_velona.bam
+
+freebayes \
+-f /media/partition/references/hg19_broadinstitute/ucsc.hg19.fasta \
+-t /media/partition/TST_15-A-manifest.bed \
+--standard-filters \
+--min-coverage 500 \
+-F 0.026 \
+--vcf /media/partition/freebayes/15060478_S1_tst_freebayes.vcf \
+/media/partition/collected/tst15_velona/mixA/15060478_S1_velona.bam
+
+freebayes \
+-f /media/partition/references/hg19_broadinstitute/ucsc.hg19.fasta \
+-t /media/partition/TST_15-A-manifest.bed \
+--standard-filters \
+--min-coverage 500 \
+-F 0.026 \
+--vcf /media/partition/freebayes/15061857_S2_tst_freebayes.vcf \
+/media/partition/collected/tst15_velona/mixA/15061857_S2_velona.bam
+
+freebayes \
+-f /media/partition/references/hg19_broadinstitute/ucsc.hg19.fasta \
+-t /media/partition/TST_15-A-manifest.bed \
+--standard-filters \
+--min-coverage 500 \
+-F 0.026 \
+--vcf /media/partition/freebayes/16004596_S4_tst_freebayes.vcf \
+/media/partition/collected/tst15_velona/mixA/16004596_S4_velona.bam
+
+freebayes \
+-f /media/partition/references/hg19_broadinstitute/ucsc.hg19.fasta \
+-t /media/partition/TST_15-A-manifest.bed \
+--standard-filters \
+--min-coverage 500 \
+-F 0.026 \
+--vcf /media/partition/freebayes/16009521_S9_tst_freebayes.vcf \
+/media/partition/collected/tst15_velona/mixA/16009521_S9_velona.bam
+
+freebayes \
+-f /media/partition/references/hg19_broadinstitute/ucsc.hg19.fasta \
+-t /media/partition/TST_15-A-manifest.bed \
+--standard-filters \
+--min-coverage 500 \
+-F 0.026 \
+--vcf /media/partition/freebayes/16012453_S3_tst_freebayes.vcf \
+/media/partition/collected/tst15_velona/mixA/16012453_S3_velona.bam
+
+freebayes \
+-f /media/partition/references/hg19_broadinstitute/ucsc.hg19.fasta \
+-t /media/partition/TST_15-A-manifest.bed \
+--standard-filters \
+--min-coverage 500 \
+-F 0.026 \
+--vcf /media/partition/freebayes/16014994_S8_tst_freebayes.vcf \
+/media/partition/collected/tst15_velona/mixA/16014994_S8_velona.bam
+
+freebayes \
+-f /media/partition/references/hg19_broadinstitute/ucsc.hg19.fasta \
+-t /media/partition/TST_15-A-manifest.bed \
+--standard-filters \
+--min-coverage 500 \
+-F 0.026 \
+--vcf /media/partition/freebayes/16015957_S1_tst_freebayes.vcf \
+/media/partition/collected/tst15_velona/mixA/16015957_S1_velona.bam
+
+freebayes \
+-f /media/partition/references/hg19_broadinstitute/ucsc.hg19.fasta \
+-t /media/partition/TST_15-A-manifest.bed \
+--standard-filters \
+--min-coverage 500 \
+-F 0.026 \
+--vcf /media/partition/freebayes/16016777_S2_tst_freebayes.vcf \
+/media/partition/collected/tst15_velona/mixA/16016777_S2_velona.bam
+
+
+freebayes \
+-f /media/partition/references/hg19_broadinstitute/ucsc.hg19.fasta \
+-t /media/partition/TST_15-A-manifest.bed \
+--standard-filters \
+--min-coverage 500 \
+-F 0.026 \
+--vcf /media/partition/freebayes/16017280_S3_tst_freebayes.vcf \
+/media/partition/collected/tst15_velona/mixA/16017280_S3_velona.bam
+
+freebayes \
+-f /media/partition/references/hg19_broadinstitute/ucsc.hg19.fasta \
+-t /media/partition/TST_15-A-manifest.bed \
+--standard-filters \
+--min-coverage 500 \
+-F 0.026 \
+--vcf /media/partition/freebayes/16017282_S4_tst_freebayes.vcf \
+/media/partition/collected/tst15_velona/mixA/16017282_S4_velona.bam
+
+freebayes \
+-f /media/partition/references/hg19_broadinstitute/ucsc.hg19.fasta \
+-t /media/partition/TST_15-A-manifest.bed \
+--standard-filters \
+--min-coverage 500 \
+-F 0.026 \
+--vcf /media/partition/freebayes/16017771_S5_tst_freebayes.vcf \
+/media/partition/collected/tst15_velona/mixA/16017771_S5_velona.bam
+
+freebayes \
+-f /media/partition/references/hg19_broadinstitute/ucsc.hg19.fasta \
+-t /media/partition/TST_15-A-manifest.bed \
+--standard-filters \
+--min-coverage 500 \
+-F 0.026 \
+--vcf /media/partition/freebayes/16017772_S6_tst_freebayes.vcf \
+/media/partition/collected/tst15_velona/mixA/16017772_S6_velona.bam
+
+
+freebayes \
+-f /media/partition/references/hg19_broadinstitute/ucsc.hg19.fasta \
+-t /media/partition/TST_15-A-manifest.bed \
+--standard-filters \
+--min-coverage 500 \
+-F 0.026 \
+--vcf /media/partition/freebayes/16017772_S6_tst_freebayes.vcf \
+/media/partition/collected/tst15_velona/mixA/16017772_S6_velona.bam

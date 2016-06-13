@@ -12,12 +12,11 @@ from collections import defaultdict
 import numpy as np
 import matplotlib.pyplot as plt
 import pylab as p
-import random
 import glob
 import gzip
 
 ### Input
-directory = '/media/usb/tst15_6_fastq'
+directory = '/media/partition/'
 
 fastq_file_list = [f for f in glob.iglob(directory+"/*.fastq.gz")]
 
