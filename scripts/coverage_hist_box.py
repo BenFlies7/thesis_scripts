@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 from matplotlib import gridspec
 
 #BAM_file = "/media/partition/Haloplex_Test_1_Late_January/Velona/15038519_S3.bam"
-BED_file = "/media/partition/Haloplex/00100-1407755742_Regions.bed"
+BED_file = "/media/partition/00100-1407755742_Regions.bed"
 #BAM_FILE = "/media/partition/Haloplex_Test_1_Late_January/Velona/15038519_S3.bam"
 #INTERVALS_BED = "/media/partition/Haloplex_Test_1_Late_January/00100-1407755742_Regions.bed"
 
@@ -21,7 +21,7 @@ BED_file = "/media/partition/Haloplex/00100-1407755742_Regions.bed"
 #INTERVALS_BED = "/media/partition/TST15_Test_1_Early_February/TST_15-A-manifest.bed"
 #BAM_FILE = "/media/partition/15001181_S1.bam"
 #BAM_file = "/media/partition/Haloplex_Test_2_Mid_February/Velona/15028422_S6.bam"
-BAM_file = "/media/partition/Haloplex/Haloplex_Test_2_Mid_February/Velona/ECD_S9.bam"
+BAM_file = "/media/partition/collected/hpx_csc_surecall/15001181_S1_surecall_duplicates.bam"
 #BAM_FILE = "/media/partition/Haloplex_Test_2_Mid_February/Velona/15051669_S1.bam"
 #BAM_FILE = "/media/partition/Haloplex_Test_2_Mid_February/Velona/15020056_S2.bam"
 #BAM_FILE = "/media/partition/Haloplex_Test_2_Mid_February/Velona/15010800_S3.bam"
